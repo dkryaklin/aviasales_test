@@ -3,7 +3,6 @@ body, html {
     padding: 0;
     -webkit-font-smoothing: antialiased;
     background-color: #F3F7FA;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .header {
@@ -40,6 +39,7 @@ body, html {
     font-size: .75rem;
     font-weight: 600;
     letter-spacing: 0.03rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .filter_title {
@@ -141,6 +141,8 @@ body, html {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 1px 5px 1px rgba(228,235,241,1);
+    font-size: .75rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .ticket_left_side {
@@ -173,6 +175,10 @@ body, html {
 .ticket_buy_button:hover {
     background-color: #FF8124;
     box-shadow: 0 1px 0 0 #F7661D, 0 2px 5px 0 rgba(0,0,0,0.1);
+}
+
+.ticket_buy_button > div {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .ticket_buy_button > div:first-child {
