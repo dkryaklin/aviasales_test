@@ -19,7 +19,7 @@
     -->
     <title>React App</title>
   </head>
-  <body style="-webkit-font-smoothing: antialiased; background-color: #F3F7FA; font-family: 'Open Sans', sans-serif; color: #4A4A4A; font-size: .75rem; font-weight: 600; letter-spacing: 0.03rem;">
+  <body>
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -31,62 +31,77 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
-    <header style="height: 164px; position: relative;">
-      <img src="/images/aviasales_logo.png" style="left: 50%; top: 50%; position: absolute; margin: -30px 0 0 -30px; border-radius: 30px; box-shadow: 0px 5px 15px 0px rgba(162,190,214,1);">
+    <header class="header">
+      <img class="header_logo" src="/images/aviasales_logo.png">
     </header>
-    <div class="content" style="display: -ms-flexbox; display: flex; -ms-flex-direction: row; flex-direction: row; justify-content: center; -ms-flex-pack: center;">
-      <div class="filter" style="padding: 16px 0; margin-right: 19px; width: 232px; background-color: #fff; border-radius: 3px; box-shadow: 0px 1px 5px 1px rgba(228,235,241,1);">
-        <label style="text-transform: uppercase; margin-left: 15px;">количество пересадок</label>
-        <div style="display: -ms-flexbox; display: flex; -ms-flex-direction: column; flex-direction: column; margin-top: 9px;">
-          <label class="label">
-            <input style="display: none;" type="checkbox">
-            <span class="checkbox"></span><label style="margin-left: 12px;">Все</label>
+
+    <div class="content">
+      <div class="filter">
+        <label class="filter_title">количество пересадок</label>
+        <div class="filter_items">
+
+          <label class="filter_item">
+            <input type="checkbox">
+            <span class="filter_item_checkbox"></span><label>Все</label>
           </label>
-          <label class="label">
-            <input style="display: none;" type="checkbox">
-            <span class="checkbox"></span><label style="margin-left: 12px;">Без пересадок</label>
-            <label class="test1">только</label>
+
+          <label class="filter_item">
+            <input type="checkbox">
+            <span class="filter_item_checkbox"></span><label>Без пересадок</label>
+            <label class="filter_item_only">только</label>
           </label>
-          <label class="label">
-            <input style="display: none;" type="checkbox">
-            <span class="checkbox"></span><label style="margin-left: 12px;">1 пересадка</label>
-            <label class="test1">только</label>
+
+          <label class="filter_item">
+            <input type="checkbox">
+            <span class="filter_item_checkbox"></span><label>1 пересадка</label>
+            <label class="filter_item_only">только</label>
           </label>
-          <label class="label">
-            <input style="display: none;" type="checkbox">
-            <span class="checkbox"></span><label style="margin-left: 12px;">2 пересадки</label>
-            <label class="test1">только</label>
+          
+          <label class="filter_item">
+            <input type="checkbox">
+            <span class="filter_item_checkbox"></span><label>2 пересадки</label>
+            <label class="filter_item_only">только</label>
           </label>
-          <label class="label">
-            <input style="display: none;" type="checkbox">
-            <span class="checkbox"></span><label style="margin-left: 12px;">3 пересадки</label>
-            <label class="test1">только</label>
+
+          <label class="filter_item">
+            <input type="checkbox">
+            <span class="filter_item_checkbox"></span><label>3 пересадки</label>
+            <label class="filter_item_only">только</label>
           </label>
+
         </div>
       </div>
-      <div class="tickets" style="width: 566px;">
-        <div class="ticket" style="display: flex; background-color: #fff; border-radius: 5px; box-shadow: 0px 1px 5px 1px rgba(228,235,241,1);">
-          <div class="col1" style="border-right: 1px solid #ECEFF1;">
-            <div class="logo" style="height: 80px; display: flex; align-items: center; justify-content: center;"><img src="/images/company_logo.png"></div>
-            <button class="button"><div style="letter-spacing: 0.04rem;">Купить</div><div>за 21 040 Р</div></button>
-            </div>
-            <div class="col2">
-              <div class="time">
-                <label>09:25</label>
-                <div>
+
+      <div class="tickets">
+
+        <div class="ticket">
+          
+          <div class="ticket_left_side">
+            
+            <div class="ticket_company_logo"><img src="/images/company_logo.png"></div>
+            <button class="ticket_buy_button"><div>Купить</div><div>за 21 040 Р</div></button>
+          </div>
+            
+            <div class="ticket_right_side">
+              <div class="ticket_info_time">
+                <label class="info_time">09:25</label>
+                <div class="info_change_count">
                   1 пересадка
                   <img src="/images/airplane.png">
                 </div>
-                <label>11:45</label>
+                <label class="info_time">11:45</label>
               </div>
-              <div class="destination" style="color: #4E4E4E; letter-spacing: 0.02rem; margin-top: 4px; display: flex; justify-content: space-between;">
+
+              <div class="ticket_info_destinations">
                 <label>VVO, Владивосток</label>
                 <label>Тель-Авив, TLV</label>
               </div>
-              <div class="date_time" style="color: #A7AEB0; letter-spacing: 0.01rem; font-weight: 400; display: flex; justify-content: space-between;">
+
+              <div class="ticket_info_dates">
                 <label>9 окт 2016, Пт</label>
                 <label>10 окт 2016, Пт</label>
               </div>
+
             </div>
         </div>
       </div>
