@@ -53,16 +53,16 @@ const Filter = ({filters, handleFilterChange}) => {
                 <div className="filter_items">
 
                     <label className="filter_item">
-                        <input className="filter_hidden_checkbox" type="checkbox" onChange={changeAllFilters} checked={isAllFiltersEnabled} />
-                        <span className="filter_item_checkbox"></span><label className="filter_item_name">Все</label>
+                        <input id={`filter_hidden_checkbox_all`} className="filter_hidden_checkbox" type="checkbox" onChange={changeAllFilters} checked={isAllFiltersEnabled} />
+                        <span className="filter_item_checkbox"></span><label htmlFor={`filter_hidden_checkbox_all`} className="filter_item_name">Все</label>
                     </label>
 
                     {
                         filters.map((filter, i) => {
                             return (
                                 <label className="filter_item" key={i}>
-                                    <input className="filter_hidden_checkbox" type="checkbox" onChange={event => {filterOnChange(filter, i, event)}} checked={filter.enabled} />
-                                    <span className="filter_item_checkbox"></span><label className="filter_item_name">{filter.label}</label>
+                                    <input id={`filter_hidden_checkbox_${i}`} className="filter_hidden_checkbox" type="checkbox" onChange={event => {filterOnChange(filter, i, event)}} checked={filter.enabled} />
+                                    <span className="filter_item_checkbox"></span><label htmlFor={`filter_hidden_checkbox_${i}`} className="filter_item_name">{filter.label}</label>
                                     <label className="filter_item_only" onClick={() => filterOnly(filter, i)}>только</label>
                                 </label>
                             )
