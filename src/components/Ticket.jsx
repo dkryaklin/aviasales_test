@@ -42,13 +42,28 @@ const getStopsLabel = (stops) => {
     return stopsLabel;
 };
 
+const getPriceLabel = (price) => {
+    price = ("" + price).split('').reverse();
+
+    let result = "";
+    price.forEach((char, i) => {
+        result = char + result;
+
+        if ((i + 1) % 3 === 0) {
+            result = ' ' + result;
+        }
+    })
+
+    return result;
+};
+
 const Ticket = ({ ticket }) => {
     return (
         <div className="ticket">
 
             <div className="ticket_left_side">
                 <div className="ticket_company_logo"><img alt="" src={`/images/${ticket.carrier}.png`} /></div>
-                <button className="ticket_buy_button"><div>Купить</div><div>за {(+ticket.price).toLocaleString()} Р</div></button>
+                <button className="ticket_buy_button"><div>Купить</div><div>за {getPriceLabel(ticket.price)} Р</div></button>
             </div>
 
             <div className="ticket_right_side">
