@@ -4,13 +4,17 @@
 
 .ticket_empty {
     display: flex;
+    display: -ms-flexbox;
     align-items: center;
+    -ms-flex-align: center;
     justify-content: center;
+    -ms-flex-pack: center;
     height: 100px;
 }
 
 .ticket {
     display: flex;
+    display: -ms-flexbox;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 1px 5px 1px rgba(228,235,241,1);
@@ -26,8 +30,12 @@
 .ticket_company_logo {
     height: 80px;
     display: flex;
+    display: -ms-flexbox;
     align-items: center;
+    -ms-flex-align: center;
     justify-content: center;
+    -ms-flex-pack: center;
+
 }
 
 .ticket_buy_button {
@@ -61,16 +69,20 @@
 
 .ticket_right_side {
     flex-grow: 1; 
+    -ms-flex-positive: 1;
     padding: 20px 25px;
 }
 
 .ticket_info_time {
     display: flex; 
+    display: -ms-flexbox;
     align-items: center;
+    -ms-flex-align: center;
 }
 
 .info_time {
     flex-grow: 0; 
+    -ms-flex-positive: 0;
     font-weight: 400; 
     font-size: 1.95rem; 
     line-height: 2.45rem; 
@@ -80,14 +92,18 @@
 .info_change_count {
     position: relative;
     display: flex;
+    display: -ms-flexbox;
     flex-grow: 1; 
+    -ms-flex-positive: 1;
     border-bottom: 1px solid #D2D5D6; 
     margin: 0 25px 0 20px; 
     color: #A2A9AB;
     text-transform: uppercase;
     font-size: 0.6rem;
     justify-content: center;
+    -ms-flex-pack: center;
     align-items: center;
+    -ms-flex-align: center;
     font-weight: 400;
     height: 25px;
     margin-top: -13px;
@@ -106,7 +122,9 @@
     margin-top: 4px; 
     font-weight: 600;
     display: flex; 
+    display: -ms-flexbox;
     justify-content: space-between;
+    -ms-flex-pack: justify;
 }
 
 .ticket_info_dates {
@@ -114,5 +132,7 @@
     letter-spacing: 0.01rem;
     font-weight: 400;
     display: flex;
+    display: -ms-flexbox;
     justify-content: space-between;
+    -ms-flex-pack: justify;
 }

@@ -43,6 +43,7 @@
 
 .filter_item:hover > .filter_item_only {
     transform: translateY(0);
+    -ms-transform: translateY(0);
 }
 
 .filter_hidden_checkbox {
@@ -95,9 +96,11 @@
     color: #3E9CE8;
     position: absolute;
     right: 15px;
+    top: 0;
     font-size: .65rem; 
     font-weight: 600;
     transform: translateY(35px);
+    -ms-transform: translateY(35px);
     letter-spacing: 0.04rem;
     transition: all 0.2s;
     height: 35px;

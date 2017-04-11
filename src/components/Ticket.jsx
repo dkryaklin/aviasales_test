@@ -3,20 +3,27 @@ import React from 'react';
 import airplane from '../images/airplane.png';
 
 const getDateLabel = (dateStr) => {
+    const months = ['янв', 'фев', 'мар', 'апр', 'мая', 'июля', 'июня', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+    const weekdays = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+
     let dateArr = dateStr.split('.');
 
-    let year = +dateArr[2] + 2000;
+    let yearNum = +dateArr[2] + 2000;
+    let monthNum = dateArr[1] - 1;
 
-    let date = new Date(year, +dateArr[1] - 1, +dateArr[0]);
+    let date = new Date(yearNum, monthNum, +dateArr[0]);
 
-    let weekday = date.toLocaleString("ru", {weekday: 'short'});
-    let month = date.toLocaleString("ru", {month: 'short'});
+    // let weekday = date.toLocaleString("ru", {weekday: 'short'});
+    // let month = date.toLocaleString("ru", {month: 'short'});
 
-    weekday = weekday.split('');
-    weekday[0] = weekday[0].toUpperCase();
-    weekday = weekday.join('');
+    // weekday = weekday.split('');
+    // weekday[0] = weekday[0].toUpperCase();
+    // weekday = weekday.join('');
 
-    return `${dateArr[0]} ${month} ${year}, ${weekday}`;
+    let weekday = weekdays[date.getDay()];
+    let month = months[monthNum];
+
+    return `${dateArr[0]} ${month} ${yearNum}, ${weekday}`;
 };
 
 const getStopsLabel = (stops) => {
@@ -55,13 +62,13 @@ const Ticket = ({ ticket }) => {
                 </div>
 
                 <div className="ticket_info_destinations">
-                    <label>{ticket.origin}, {ticket.origin_name}</label>
-                    <label>{ticket.destination_name}, {ticket.destination}</label>
+                    <div>{ticket.origin}, {ticket.origin_name}</div>
+                    <div>{ticket.destination_name}, {ticket.destination}</div>
                 </div>
 
                 <div className="ticket_info_dates">
-                    <label>{getDateLabel(ticket.departure_date)}</label>
-                    <label>{getDateLabel(ticket.arrival_date)}</label>
+                    <div>{getDateLabel(ticket.departure_date)}</div>
+                    <div>{getDateLabel(ticket.arrival_date)}</div>
                 </div>
 
             </div>
