@@ -15,11 +15,18 @@ const Filter = ({filters, handleFilterChange}) => {
         handleFilterChange(newStateFilters);
     }
     
-    const filterOnly = (filter, key) => {
+    const filterOnly = (filter, key, event) => {
+        event.preventDefault();
+
         let newStateFilters = [...filters];
 
-        newStateFilters.forEach(item => item.enabled = false);
-        newStateFilters[key].enabled = true;
+        newStateFilters.forEach((item, i) => {
+            if (i === key) {
+                item.enabled = true;
+            } else {
+                item.enabled = false;
+            }
+        });
 
         handleFilterChange(newStateFilters);
     }
@@ -63,7 +70,7 @@ const Filter = ({filters, handleFilterChange}) => {
                                 <label className="filter_item" key={i}>
                                     <input id={`filter_hidden_checkbox_${i}`} className="filter_hidden_checkbox" type="checkbox" onChange={event => {filterOnChange(filter, i, event)}} checked={filter.enabled} />
                                     <span className="filter_item_checkbox"></span><label htmlFor={`filter_hidden_checkbox_${i}`} className="filter_item_name">{filter.label}</label>
-                                    <label className="filter_item_only" onClick={() => filterOnly(filter, i)}>только</label>
+                                    <label className="filter_item_only" onClick={event => filterOnly(filter, i, event)}>только</label>
                                 </label>
                             )
                         })
