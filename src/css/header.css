@@ -1,0 +1,13 @@
+.header {
+    height: 164px;
+    position: relative;
+}
+
+.header_logo {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    margin: -30px 0 0 -30px;
+    border-radius: 30px;
+    box-shadow: 0px 5px 15px 0px rgba(162,190,214,1);
+}

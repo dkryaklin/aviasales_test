@@ -1,0 +1,103 @@
+.filter {
+    padding: 16px 0;
+    margin-right: 19px;
+    width: 232px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 1px 5px 1px rgba(228,235,241,1);
+    color: #4A4A4A;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.filter_title {
+    text-transform: uppercase;
+    margin-left: 15px;
+}
+
+.filter_items {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    margin-top: 9px;
+}
+
+.filter_item {
+    padding: 0 15px;
+    height: 35px; 
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter_item:hover {
+    background-color: #F1FCFF;
+}
+
+.filter_item:hover > .filter_item_only {
+    transform: translateY(0);
+}
+
+.filter_hidden_checkbox {
+    display: none;
+}
+
+.filter_hidden_checkbox:checked + .filter_item_checkbox {
+    border: 1px solid #3E9CE8; 
+    background-color: #F2FCFF;
+}
+
+.filter_hidden_checkbox:checked + .filter_item_checkbox:after {
+    opacity: 1;
+    background-position: center center;
+}
+
+.filter_item > label {
+    margin-left: 12px;
+    cursor: pointer;
+    pointer-events: none;
+    user-select: none;
+}
+
+.filter_item_checkbox {
+    border-radius: 2px; 
+    width: 17px; 
+    height: 17px; 
+    border: 1px solid #D2D5D6;
+    background-color: #fff;
+    display: inline-block;
+    position: relative;
+}
+
+.filter_item_checkbox:after {
+    width: 17px;
+    height: 17px;
+    display: block;
+    content: "";
+    opacity: 0;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgOSA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xLjUgMy41bDIgMiA0LTQiIHN0cm9rZT0iIzBDQjJFMSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=) no-repeat;
+    background-position: center top;
+    transition: opacity .2s ease-in-out,background-position .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out,background-position .2s ease-in-out;
+    transition: opacity .2s ease-in-out,background-position .2s ease-in-out;
+}
+
+.filter_item_only {
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #3E9CE8;
+    position: absolute;
+    right: 15px;
+    font-size: .65rem; 
+    font-weight: 600;
+    transform: translateY(30px);
+    letter-spacing: 0.04rem;
+    transition: all 0.2s;
+}

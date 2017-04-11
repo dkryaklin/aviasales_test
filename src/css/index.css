@@ -1,0 +1,15 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    background-color: #F3F7FA;
+}
+
+.content {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: center;
+    -ms-flex-pack: center;
+}
