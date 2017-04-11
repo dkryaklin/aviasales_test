@@ -2,8 +2,18 @@ import React from 'react';
 
 import '../css/filter.css';
 
-const Filter = () => {
-    const filters = ['Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки'];
+const Filter = ({filters, handleFilterChange}) => {
+    const filterOnChange = (filter, key, event) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+
+        filter.enabled = value;
+
+        const newStateFilters = [...filters];
+        newStateFilters[key] = filter;
+
+        handleFilterChange(newStateFilters);
+    }
 
     return (
         <div>
@@ -17,11 +27,11 @@ const Filter = () => {
                     </label>
 
                     {
-                        filters.map((item, i) => {
+                        filters.map((filter, i) => {
                             return (
                                 <label className="filter_item" key={i}>
-                                    <input className="filter_hidden_checkbox" type="checkbox" defaultChecked={true} />
-                                    <span className="filter_item_checkbox"></span><label>{item}</label>
+                                    <input className="filter_hidden_checkbox" type="checkbox" onChange={event => {filterOnChange(filter, i, event)}} defaultChecked={filter.enabled} />
+                                    <span className="filter_item_checkbox"></span><label>{filter.label}</label>
                                     <label className="filter_item_only">только</label>
                                 </label>
                             )

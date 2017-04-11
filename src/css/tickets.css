@@ -2,6 +2,13 @@
     width: 566px;
 }
 
+.ticket_empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
 .ticket {
     display: flex;
     background-color: #fff;

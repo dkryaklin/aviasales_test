@@ -10,7 +10,23 @@ class App extends Component {
 
         this.state = {
             tickets: [],
-            selectedFilters: [0, 1, 2, 3]
+            filters: [{
+                enabled: true,
+                label: 'Без пересадок'
+            }, {
+                enabled: true,
+                label: '1 пересадка'
+            }, {
+                enabled: true,
+                label: '2 пересадки'
+            }, {
+                enabled: true,
+                label: '3 пересадки'
+            }]
+        }
+
+        this.handleFilterChange = (filters) => {
+            this.setState({filters});
         }
     }
 
@@ -30,13 +46,23 @@ class App extends Component {
             return <Header />
         }
 
+        const filteredTickets = this.state.tickets.filter((ticket, i) => {
+            const filter = this.state.filters[ticket.stops];
+
+            if (filter && filter.enabled) {
+                return true;
+            }
+
+            return false;
+        });
+
         return (
             <div>
                 <Header />
                 
                 <div className="content">
-                    <Filter />
-                    <Tickets tickets={this.state.tickets} />
+                    <Filter filters={this.state.filters} handleFilterChange={this.handleFilterChange} />
+                    <Tickets tickets={filteredTickets} />
                 </div>
             </div>
         );
