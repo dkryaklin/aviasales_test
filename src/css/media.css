@@ -41,8 +41,12 @@
         width: 566px;
     }
 
-    .filter {
+    .content > div:first-child {
         margin: 0 0 20px;
+    }
+
+    .filter {
+        margin: 0;
     }
 
     .ticket {
@@ -97,11 +101,12 @@
 @media only screen and (max-width: 400px) {
     .content > div:first-child {
         width: 100%;
+        margin: 0 0 10px;
     }
 
     .filter {
         width: 100%;
-        margin: 0 0 10px;
+        margin: 0;
     }
 
     .filter, .ticket {
@@ -128,9 +133,9 @@
         -ms-flex-pack: center;
     }
 
-    .info_time:first-child {
-        flex-grow: 1;
-        -ms-flex-positive: 1;
+    .ticket_info_time {
+        justify-content: space-between;
+        -ms-flex-pack: justify;
     }
 
     .ticket_company_logo, .info_change_count {

@@ -53,12 +53,12 @@ const Ticket = ({ ticket }) => {
 
             <div className="ticket_right_side">
                 <div className="ticket_info_time">
-                    <label className="info_time">{ticket.departure_time}</label>
+                    <div className="info_time">{ticket.departure_time}</div>
                     <div className="info_change_count">
                         {getStopsLabel(ticket.stops)}
                         <img alt="" src={airplane} />
                     </div>
-                    <label className="info_time">{ticket.arrival_time}</label>
+                    <div className="info_time">{ticket.arrival_time}</div>
                 </div>
 
                 <div className="ticket_info_destinations">
