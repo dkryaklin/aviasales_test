@@ -5,19 +5,15 @@
 
     .ticket {
         flex-direction: column;
-        -ms-flex-direction: column;
     }
 
     .ticket_left_side {
         display: flex;
-        display: -ms-flexbox;
         flex-direction: row;
-        -ms-flex-direction: row;
     }
 
     .ticket_company_logo {
         flex-grow: 1;
-        -ms-flex-positive: 1;
     }
 
     .ticket_company_logo > img {
@@ -32,9 +28,7 @@
 @media only screen and (max-width: 700px) {
     .content {
         flex-direction: column;
-        -ms-flex-direction: column;
         align-items: center;
-        -ms-flex-align: center;
     }
 
     .tickets, .filter {
@@ -51,7 +45,6 @@
 
     .ticket {
         flex-direction: row;
-        -ms-flex-direction: row;
     }
 
     .ticket_left_side {
@@ -74,19 +67,15 @@
 
     .ticket {
         flex-direction: column;
-        -ms-flex-direction: column;
     }
 
     .ticket_left_side {
         display: flex;
-        display: -ms-flexbox;
         flex-direction: row;
-        -ms-flex-direction: row;
     }
 
     .ticket_company_logo {
         flex-grow: 1;
-        -ms-flex-positive: 1;
     }
 
     .ticket_company_logo > img {
@@ -120,22 +109,17 @@
 
     .ticket {
         flex-direction: column;
-        -ms-flex-direction: column;
         margin-bottom: 10px;
     }
 
     .ticket_left_side {
         display: flex;
-        display: -ms-flexbox;
         flex-direction: row;
-        -ms-flex-direction: row;
         justify-content: center;
-        -ms-flex-pack: center;
     }
 
     .ticket_info_time {
         justify-content: space-between;
-        -ms-flex-pack: justify;
     }
 
     .ticket_company_logo, .info_change_count {

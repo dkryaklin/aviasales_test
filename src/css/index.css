@@ -7,9 +7,6 @@ body, html {
 
 .content {
     display: flex;
-    display: -ms-flexbox;
     flex-direction: row;
-    -ms-flex-direction: row;
     justify-content: center;
-    -ms-flex-pack: center;
 }

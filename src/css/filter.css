@@ -19,9 +19,7 @@
 
 .filter_items {
     display: flex;
-    display: -ms-flexbox;
     flex-direction: column;
-    -ms-flex-direction: column;
     margin-top: 9px;
 }
 
@@ -29,8 +27,6 @@
     padding: 0 15px;
     height: 35px; 
     display: flex;
-    display: -ms-flexbox;
-    -ms-flex-align: center;
     align-items: center;
     cursor: pointer;
     position: relative;
@@ -43,7 +39,6 @@
 
 .filter_item:hover > .filter_item_only {
     transform: translateY(0);
-    -ms-transform: translateY(0);
 }
 
 .filter_hidden_checkbox {
@@ -62,9 +57,7 @@
 
 .filter_item_name {
     display: flex;
-    display: -ms-flexbox;
     align-items: center;
-    -ms-flex-align: center;
     height: 35px;
     margin-left: 12px;
     cursor: pointer;
@@ -91,8 +84,6 @@
     background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgOSA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xLjUgMy41bDIgMiA0LTQiIHN0cm9rZT0iIzBDQjJFMSIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=) no-repeat;
     background-position: center top;
     transition: opacity .2s ease-in-out,background-position .2s ease-in-out;
-    -o-transition: opacity .2s ease-in-out,background-position .2s ease-in-out;
-    transition: opacity .2s ease-in-out,background-position .2s ease-in-out;
 }
 
 .filter_item_only {
@@ -105,12 +96,9 @@
     font-size: .65rem; 
     font-weight: 600;
     transform: translateY(35px);
-    -ms-transform: translateY(35px);
     letter-spacing: 0.04rem;
     transition: all 0.2s;
     height: 35px;
     display: flex;
-    display: -ms-flexbox;
     align-items: center;
-    -ms-flex-align: center;
 }
