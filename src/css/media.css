@@ -1,0 +1,131 @@
+@media only screen and (max-width: 900px) {
+    .tickets {
+        width: 366px;
+    }
+
+    .ticket {
+        flex-direction: column;
+    }
+
+    .ticket_left_side {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ticket_company_logo {
+        flex-grow: 1;
+    }
+
+    .ticket_company_logo > img {
+        max-width: 140px;
+    }
+
+    .ticket_buy_button {
+        margin: 25px 20px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tickets, .filter {
+        width: 566px;
+    }
+
+    .filter {
+        margin: 0 0 20px;
+    }
+
+    .ticket {
+        flex-direction: row;
+    }
+
+    .ticket_left_side {
+        display: block;
+    }
+
+    .ticket_company_logo > img {
+        max-width: 180px;
+    }
+
+    .ticket_buy_button {
+        margin: 0 20px 25px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .tickets, .filter {
+        width: 366px;
+    }
+
+    .ticket {
+        flex-direction: column;
+    }
+
+    .ticket_left_side {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ticket_company_logo {
+        flex-grow: 1;
+    }
+
+    .ticket_company_logo > img {
+        max-width: 140px;
+    }
+
+    .ticket_buy_button {
+        margin: 25px 20px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .content > div:first-child {
+        width: 100%;
+    }
+
+    .filter {
+        width: 100%;
+        margin: 0 0 10px;
+    }
+
+    .filter, .ticket {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .tickets {
+        width: 100%;
+    }
+
+    .ticket {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .ticket_left_side {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .info_time:first-child {
+        flex-grow: 1;
+    }
+
+    .ticket_company_logo, .info_change_count {
+        display: none;
+    }
+
+    .ticket_company_logo > img {
+        max-width: 140px;
+    }
+
+    .ticket_buy_button {
+        margin: 25px 20px;
+    }
+}
