@@ -26,6 +26,8 @@ class App extends Component {
         }
 
         this.handleFilterChange = (filters) => {
+            localStorage.setItem('filters', JSON.stringify(filters));
+
             this.setState({filters});
         }
     }
@@ -34,7 +36,10 @@ class App extends Component {
         let response = await fetch('/tickets.json');
         let { tickets } = await response.json();
 
-        this.setState({ tickets });
+        this.setState({ 
+            tickets,
+            filters: localStorage.getItem('filters') ? JSON.parse(localStorage.getItem('filters')) : this.state.filters
+        });
     }
 
     componentDidMount() {

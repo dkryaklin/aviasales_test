@@ -9,11 +9,42 @@ const Filter = ({filters, handleFilterChange}) => {
 
         filter.enabled = value;
 
-        const newStateFilters = [...filters];
+        let newStateFilters = [...filters];
         newStateFilters[key] = filter;
 
         handleFilterChange(newStateFilters);
     }
+    
+    const filterOnly = (filter, key) => {
+        let newStateFilters = [...filters];
+
+        newStateFilters.forEach(item => item.enabled = false);
+        newStateFilters[key].enabled = true;
+
+        handleFilterChange(newStateFilters);
+    }
+
+    const changeAllFilters = (event) => {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+
+        let newStateFilters = [...filters];
+
+        if (value) {
+            newStateFilters.forEach(item => item.enabled = true);
+        } else {
+            newStateFilters.forEach(item => item.enabled = false);
+        }
+
+        handleFilterChange(newStateFilters);
+    }
+
+    let isAllFiltersEnabled = true;
+    filters.forEach(item => {
+        if (!item.enabled) {
+            isAllFiltersEnabled = false;
+        }
+    });
 
     return (
         <div>
@@ -22,17 +53,17 @@ const Filter = ({filters, handleFilterChange}) => {
                 <div className="filter_items">
 
                     <label className="filter_item">
-                        <input className="filter_hidden_checkbox" type="checkbox" defaultChecked={true} />
-                        <span className="filter_item_checkbox"></span><label>Все</label>
+                        <input className="filter_hidden_checkbox" type="checkbox" onChange={changeAllFilters} checked={isAllFiltersEnabled} />
+                        <span className="filter_item_checkbox"></span><label className="filter_item_name">Все</label>
                     </label>
 
                     {
                         filters.map((filter, i) => {
                             return (
                                 <label className="filter_item" key={i}>
-                                    <input className="filter_hidden_checkbox" type="checkbox" onChange={event => {filterOnChange(filter, i, event)}} defaultChecked={filter.enabled} />
-                                    <span className="filter_item_checkbox"></span><label>{filter.label}</label>
-                                    <label className="filter_item_only">только</label>
+                                    <input className="filter_hidden_checkbox" type="checkbox" onChange={event => {filterOnChange(filter, i, event)}} checked={filter.enabled} />
+                                    <span className="filter_item_checkbox"></span><label className="filter_item_name">{filter.label}</label>
+                                    <label className="filter_item_only" onClick={() => filterOnly(filter, i)}>только</label>
                                 </label>
                             )
                         })

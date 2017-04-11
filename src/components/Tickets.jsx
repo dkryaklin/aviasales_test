@@ -9,7 +9,7 @@ const Tickets = ({tickets}) => {
         <div className="tickets">
 
             {
-                tickets.length != 0 ? tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} />) : <div className="ticket_empty">¯\_(ツ)_/¯</div>
+                tickets.length !== 0 ? tickets.map((ticket, i) => <Ticket key={i} ticket={ticket} />) : <div className="ticket_empty">¯\_(ツ)_/¯</div>
             }
 
         </div>

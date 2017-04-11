@@ -59,7 +59,7 @@
     background-position: center center;
 }
 
-.filter_item > label {
+.filter_item_name {
     margin-left: 12px;
     cursor: pointer;
     pointer-events: none;
@@ -97,7 +97,10 @@
     right: 15px;
     font-size: .65rem; 
     font-weight: 600;
-    transform: translateY(30px);
+    transform: translateY(35px);
     letter-spacing: 0.04rem;
     transition: all 0.2s;
+    height: 35px;
+    display: flex;
+    align-items: center;
 }
