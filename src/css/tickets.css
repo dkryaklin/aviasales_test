@@ -18,6 +18,10 @@
     margin-bottom: 20px;
 }
 
+.ticket:hover {
+        box-shadow: 0px 10px 20px 5px rgba(228,235,241,1);
+}
+
 .ticket_left_side {
     border-right: 1px solid #ECEFF1;
 }
