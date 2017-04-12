@@ -5,6 +5,7 @@ import Filter from './Filter';
 import Tickets from './Tickets';
 
 import { filterTickets } from '../utils';
+import { readFilters, storeFilters } from '../localStorage';
 
 class App extends Component {
     constructor(props) {
@@ -12,26 +13,13 @@ class App extends Component {
 
         this.state = {
             tickets: [],
-            filters: [{
-                enabled: true,
-                label: 'Без пересадок'
-            }, {
-                enabled: true,
-                label: '1 пересадка'
-            }, {
-                enabled: true,
-                label: '2 пересадки'
-            }, {
-                enabled: true,
-                label: '3 пересадки'
-            }],
+            filters: [],
             isLoaded: false,
             error: null
         }
 
         this.handleFilterChange = (filters) => {
-            localStorage.setItem('filters', JSON.stringify(filters));
-
+            storeFilters(filters);
             this.setState({filters});
         };
 
@@ -45,7 +33,7 @@ class App extends Component {
                 this.setState({
                     isLoaded: true,
                     tickets,
-                    filters: localStorage.getItem('filters') ? JSON.parse(localStorage.getItem('filters')) : this.state.filters
+                    filters: readFilters()
                 });
 
             })).catch(error => {
