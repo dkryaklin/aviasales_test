@@ -4,17 +4,7 @@ import Header from './Header';
 import Filter from './Filter';
 import Tickets from './Tickets';
 
-const filterTickets = (tickets, filters) => {
-    return tickets.filter((ticket, i) => {
-        const filter = filters[ticket.stops];
-
-        if (filter && filter.enabled) {
-            return true;
-        }
-
-        return false;
-    });
-};
+import { filterTickets } from '../utils';
 
 class App extends Component {
     constructor(props) {
