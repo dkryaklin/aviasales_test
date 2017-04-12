@@ -62,7 +62,7 @@ const Ticket = ({ ticket }) => {
         <div className="ticket">
 
             <div className="ticket_left_side">
-                <div className="ticket_company_logo"><img alt="" src={`/images/${ticket.carrier}.png`} /></div>
+                <div className="ticket_company_logo"><img alt="" src={`http://pics.avs.io/180/50/${ticket.carrier}.png`} /></div>
                 <button className="ticket_buy_button"><div>Купить</div><div>за {getPriceLabel(ticket.price)} Р</div></button>
             </div>
 
