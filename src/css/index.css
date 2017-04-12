@@ -9,4 +9,28 @@ body, html {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content.error {
+    flex-direction: column;
+    align-items: center;
+}
+
+.error_message {
+    font-size: 1rem;
+}
+
+.error_button {
+    width: 160px;
+    margin: 20px;
+    height: 56px;
+    background-color: #FF3F00;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    line-height: 22px;
 }
