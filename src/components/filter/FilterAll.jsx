@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { filterSelectAll, isAllFiltersEnabled } from './filterUtils';
+import { filterSelectAll, isAllFiltersEnabled } from '../../utils/filter';
 
 const FilterAll = ({filters, filterCallback}) => {
     return (

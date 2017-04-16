@@ -2,7 +2,7 @@ import React from 'react';
 
 import Ticket from './Ticket';
 
-import '../css/tickets.css';
+import '../../css/tickets.css';
 
 const Tickets = ({tickets}) => {
     return (

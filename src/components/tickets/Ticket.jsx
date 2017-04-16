@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { getDateLabel, getStopsLabel, getPriceLabel } from '../utils';
+import { getDateLabel, getStopsLabel, getPriceLabel } from '../../utils/ticket';
 
-import airplane from '../images/airplane.png';
+import airplane from '../../images/airplane.png';
 
 const Ticket = ({ ticket }) => {
     return (

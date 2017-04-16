@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 import Header from './Header';
 import Filter from './filter/Filter';
-import Tickets from './Tickets';
+import Tickets from './tickets/Tickets';
 
-import { filterTickets } from '../utils';
-import { readFilters, storeFilters } from '../localStorage';
+import { filterTickets } from '../utils/app';
+import { readFilters, storeFilters } from '../utils/localStorage';
 
 class App extends Component {
     constructor(props) {
