@@ -1,58 +1,10 @@
 import React from 'react';
 
+import { isAllFiltersEnabled, filterSelectAll, filterOnChange, filterSelectOnly } from '../utils';
+
 import '../css/filter.css';
 
-const Filter = ({filters, handleFilterChange}) => {
-    const filterOnChange = (filter, key, event) => {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-
-        filter.enabled = value;
-
-        let newStateFilters = [...filters];
-        newStateFilters[key] = filter;
-
-        handleFilterChange(newStateFilters);
-    }
-    
-    const filterOnly = (filter, key, event) => {
-        event.preventDefault();
-
-        let newStateFilters = [...filters];
-
-        newStateFilters.forEach((item, i) => {
-            if (i === key) {
-                item.enabled = true;
-            } else {
-                item.enabled = false;
-            }
-        });
-
-        handleFilterChange(newStateFilters);
-    }
-
-    const changeAllFilters = (event) => {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-
-        let newStateFilters = [...filters];
-
-        if (value) {
-            newStateFilters.forEach(item => item.enabled = true);
-        } else {
-            newStateFilters.forEach(item => item.enabled = false);
-        }
-
-        handleFilterChange(newStateFilters);
-    }
-
-    let isAllFiltersEnabled = true;
-    filters.forEach(item => {
-        if (!item.enabled) {
-            isAllFiltersEnabled = false;
-        }
-    });
-
+const Filter = ({filters, filterCallback}) => {
     return (
         <div>
             <div className="filter">
@@ -64,8 +16,8 @@ const Filter = ({filters, handleFilterChange}) => {
                             id={`filter_hidden_checkbox_all`} 
                             className="filter_hidden_checkbox" 
                             type="checkbox" 
-                            onChange={changeAllFilters} 
-                            checked={isAllFiltersEnabled} 
+                            onChange={event => {filterSelectAll(event, filters, filterCallback)}} 
+                            checked={isAllFiltersEnabled(filters, filterCallback)} 
                         />
                         <span className="filter_item_checkbox"></span>
                         <label htmlFor={`filter_hidden_checkbox_all`} className="filter_item_name">Все</label>
@@ -79,12 +31,12 @@ const Filter = ({filters, handleFilterChange}) => {
                                         id={`filter_hidden_checkbox_${i}`} 
                                         className="filter_hidden_checkbox" 
                                         type="checkbox" 
-                                        onChange={event => {filterOnChange(filter, i, event)}} 
+                                        onChange={event => {filterOnChange(i, event, filters, filterCallback)}} 
                                         checked={filter.enabled} 
                                     />
                                     <span className="filter_item_checkbox"></span>
                                     <label htmlFor={`filter_hidden_checkbox_${i}`} className="filter_item_name">{filter.label}</label>
-                                    <label className="filter_item_only" onClick={event => filterOnly(filter, i, event)}>только</label>
+                                    <label className="filter_item_only" onClick={event => filterSelectOnly(i, event, filters, filterCallback)}>только</label>
                                 </label>
                             )
                         })

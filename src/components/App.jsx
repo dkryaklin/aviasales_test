@@ -66,7 +66,7 @@ class App extends Component {
         } else {
             content = (
                 <div className="content">
-                    <Filter filters={this.state.filters} handleFilterChange={this.handleFilterChange} />
+                    <Filter filters={this.state.filters} filterCallback={this.handleFilterChange} />
                     <Tickets tickets={filterTickets(this.state.tickets, this.state.filters)} />
                 </div>
             );
