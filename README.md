@@ -17,40 +17,41 @@ $ npm start
 * Safari
 
 ### Структура проекта
-
-|-- aviasales_test  
-    |-- .gitignore  
-    |-- LICENSE  
-    |-- package.json  
-    |-- README.md  
-    |-- public  
-    |   |-- favicon.ico  
-    |   |-- index.html  
-    |   |-- tickets.json  
-    |-- src  
-        |-- index.js  
-        |-- components  
-        |   |-- App.jsx  
-        |   |-- Header.jsx  
-        |   |-- Other.jsx  
-        |   |-- filter  
-        |   |   |-- Filter.jsx  
-        |   |   |-- FilterAll.jsx  
-        |   |   |-- FilterItem.jsx  
-        |   |-- tickets  
-        |       |-- Ticket.jsx  
-        |       |-- Tickets.jsx  
+```
+|-- aviasales_test
+    |-- .gitignore
+    |-- LICENSE
+    |-- package.json
+    |-- README.md
+    |-- public
+    |   |-- favicon.ico
+    |   |-- index.html
+    |   |-- tickets.json
+    |-- src
+        |-- index.js
+        |-- components
+        |   |-- App.jsx
+        |   |-- Header.jsx
+        |   |-- Other.jsx
+        |   |-- filter
+        |   |   |-- Filter.jsx
+        |   |   |-- FilterAll.jsx
+        |   |   |-- FilterItem.jsx
+        |   |-- tickets
+        |       |-- Ticket.jsx
+        |       |-- Tickets.jsx
         |-- css  
-        |   |-- filter.css  
-        |   |-- header.css  
-        |   |-- index.css  
-        |   |-- media.css  
-        |   |-- tickets.css  
-        |-- images  
-        |   |-- airplane.png  
-        |   |-- aviasales_logo.png  
-        |-- utils  
-            |-- app.js  
-            |-- filter.js  
-            |-- localStorage.js  
-            |-- ticket.js  
+        |   |-- filter.css
+        |   |-- header.css
+        |   |-- index.css
+        |   |-- media.css
+        |   |-- tickets.css
+        |-- images
+        |   |-- airplane.png
+        |   |-- aviasales_logo.png
+        |-- utils
+            |-- app.js
+            |-- filter.js
+            |-- localStorage.js
+            |-- ticket.js
+```
