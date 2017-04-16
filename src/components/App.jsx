@@ -32,7 +32,7 @@ class App extends React.Component {
             error: null
         });
 
-        fetch('/tickets.json').then(response => response.json()).then((({tickets}) => {
+        fetch(`${process.env.PUBLIC_URL}/tickets.json`).then(response => response.json()).then((({tickets}) => {
             this.setState({
                 isLoaded: true,
                 tickets,
