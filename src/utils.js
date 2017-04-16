@@ -75,25 +75,25 @@ export const isAllFiltersEnabled = (filters) => {
     return true;
 };
 
-export const filterOnChange = (key, event, filters, filterCallback) => {
+export const filterOnChange = (id, event, filters, filterCallback) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
     // filter.enabled = value;
 
     let newStateFilters = [...filters];
-    newStateFilters[key] = {...newStateFilters[key], enabled: value};
+    newStateFilters[id] = {...newStateFilters[id], enabled: value};
 
     filterCallback(newStateFilters);
 }
 
-export const filterSelectOnly = (key, event, filters, filterCallback) => {
+export const filterSelectOnly = (id, event, filters, filterCallback) => {
     event.preventDefault();
 
     let newStateFilters = [...filters];
 
     newStateFilters.forEach((item, i) => {
-        if (i === key) {
+        if (i === id) {
             item.enabled = true;
         } else {
             item.enabled = false;

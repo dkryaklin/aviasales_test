@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './Header';
-import Filter from './Filter';
+import Filter from './filter/Filter';
 import Tickets from './Tickets';
 
 import { filterTickets } from '../utils';
