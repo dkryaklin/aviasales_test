@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { filterOnChange, filterSelectOnly } from '../../utils';
+import { filterOnChange, filterSelectOnly } from './filterUtils';
 
 const FilterItem = ({id, filters, filterCallback}) => {
     const filter = filters[id];
