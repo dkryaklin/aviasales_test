@@ -1,4 +1,4 @@
-export const filterTickets = (tickets, filters) => {
+export const filterAndSortTickets = (tickets, filters) => {
     return tickets.filter((ticket, i) => {
         const filter = filters[ticket.stops];
 
@@ -7,5 +7,7 @@ export const filterTickets = (tickets, filters) => {
         }
 
         return false;
+    }).sort((a, b) => {
+        return a.price - b.price;
     });
 };

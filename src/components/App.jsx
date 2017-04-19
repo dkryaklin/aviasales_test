@@ -6,7 +6,7 @@ import Tickets from './tickets/Tickets';
 
 import { AppLoadingMessage, AppErrorMessage, AppNothingToShow } from './Other';
 
-import { filterTickets } from '../utils/app';
+import { filterAndSortTickets } from '../utils/app';
 import { readFilters, storeFilters } from '../utils/localStorage';
 
 class App extends React.Component {
@@ -64,7 +64,7 @@ class App extends React.Component {
             content = (
                 <div className="content">
                     <Filter filters={this.state.filters} filterCallback={this.handleFilterChange} />
-                    <Tickets tickets={filterTickets(this.state.tickets, this.state.filters)} />
+                    <Tickets tickets={filterAndSortTickets(this.state.tickets, this.state.filters)} />
                 </div>
             );
         }
