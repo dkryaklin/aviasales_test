@@ -12,8 +12,6 @@ export const filterOnChange = (id, event, filters, filterCallback) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
-    // filter.enabled = value;
-
     let newStateFilters = [...filters];
     newStateFilters[id] = {...newStateFilters[id], enabled: value};
 

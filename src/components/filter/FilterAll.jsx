@@ -10,7 +10,7 @@ const FilterAll = ({filters, filterCallback}) => {
                 className="filter_hidden_checkbox" 
                 type="checkbox" 
                 onChange={event => {filterSelectAll(event, filters, filterCallback)}} 
-                checked={isAllFiltersEnabled(filters, filterCallback)} 
+                checked={isAllFiltersEnabled(filters)} 
             />
             <span className="filter_item_checkbox"></span>
             <label htmlFor={`filter_hidden_checkbox_all`} className="filter_item_name">Все</label>
